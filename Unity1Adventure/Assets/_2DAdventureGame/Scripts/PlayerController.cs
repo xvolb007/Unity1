@@ -5,6 +5,12 @@ public class PlayerController : MonoBehaviour
 {
     public InputAction action;
     private float Speed = 3f;
+    Rigidbody2D rigidbody2D;
+    Vector2 move;
+    void Awake()
+    {
+        rigidbody2D = GetComponent<Rigidbody2D>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,9 +21,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Time.deltaTime je cas ktery uplyne mezi framy
-        Vector2 move = action.ReadValue<Vector2>();
+        move = action.ReadValue<Vector2>();
         Debug.Log(move);
+        
+    }
+    void FixedUpdate()
+    {
         Vector2 position = (Vector2)transform.position + move * Speed * Time.deltaTime;
-        transform.position = position;
+        rigidbody2D.MovePosition(position);
     }
 }
