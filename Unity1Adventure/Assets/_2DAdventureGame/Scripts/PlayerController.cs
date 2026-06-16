@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,17 +24,16 @@ public class PlayerController : MonoBehaviour
     {
         // Time.deltaTime je cas ktery uplyne mezi framy
         move = action.ReadValue<Vector2>();
-        Debug.Log(move);
-        
+        //Debug.Log(move);
     }
     private void FixedUpdate()
     {
         Vector2 position = (Vector2)transform.position + move * Speed * Time.deltaTime;
         rigidbody2D.MovePosition(position);
     }
-    private void ChangeHealth(int amount)
+    public void ChangeHealth(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log($"{currentHealth} / {maxHealth}");
+        Debug.Log($"{currentHealth} / {maxHealth}. Heal amount {amount}");
     }
 }

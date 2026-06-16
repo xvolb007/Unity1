@@ -1,0 +1,51 @@
+Úkol 1 – Silnější healka
+
+Doteď nám objekt CollectibleHealth doplňoval 1 život. Tvým úkolem je upravit ho tak, aby nyní doplňoval 2 životy.
+
+Jak zkontrolovat, že to funguje?
+Spusť hru.
+Najdi ve hře healku (jahůdku).
+Šlápni na ni hráčem.
+V konzoli se vypíše:
+2/10. Heal amount 2
+ale ne
+1/10. Heal amount 1
+
+
+Úkol 2 – Vytvoření nové healky
+V Unity otevři složku:
+Assets/_2DAdventureGame/Art/Ducko/VFX
+Najdi obrázek CollectibleHealth.png (meloun).
+Přetáhni ho do MainScene.
+Přidej mu komponentu Box Collider 2D.
+U Box Collideru zaškrtni Is Trigger.
+Přidej skript HealthCollectible(napis jak na to), který jsme vytvořili minule.
+Vytvoř z objektu prefab:
+přetáhni nový objekt CollectibleHealth_1 do složky
+Assets/_2DAdventureGame/Art/Ruby/Prefabs
+Kontrola
+Spusť hru.
+Šlápni hráčem na meloun.
+V konzoli by se měla vypsat nějaká zpráva z našeho skriptu.
+
+Úkol 3 – Různé healovací předměty
+Teď potřebujeme, aby objekty:
+
+CollectibleHealth
+CollectibleHealth_1
+
+doplňovaly různý počet životů.
+
+Například:
+
+jahůdka může léčit 2 život,
+meloun může léčit 3 životy.
+
+Jak to uděláš, je na tobě. Zamysli se nad tím, jak jsme řešili proměnnou maxHealth u objektu PlayerCharacter.
+
+Kontrola
+Spusť hru.
+Seber jahůdku a podívej se do konzole.
+Seber meloun a podívej se do konzole.
+
+V konzoli by se měla zobrazovat různá čísla podle toho, který předmět sebral hráč.
